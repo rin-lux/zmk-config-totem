@@ -21,13 +21,6 @@
 #define TVP1 4
 #define TVP2 5
 
-&mt {
-    quick-tap-ms = <100>;
-    global-quick-tap;
-    flavor = "tap-preferred";
-    tapping-term-ms = <170>;
-};
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -69,6 +62,34 @@
             #binding-cells = <0>;
             bindings = <&kp SEMICOLON>, <&kp BACKSLASH>;
         };
+
+        RHS_HMR: RHS_HMR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RHS_HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <0 10 11 12 13 14 20 21 22 23 24 25 32 33 34 1 2 3 4 12>;
+            hold-trigger-on-release;
+        };
+
+        LHS_HMR: LHS_HMR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LHS_HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 26 35 36 37>;
+        };
     };
 
     keymap {
@@ -93,10 +114,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-            &kp Q       &kp W       &kp F             &kp P               &kp B          &kp J        &kp L            &kp U              &kp Y       &semi_bslash
-            &mt LGUI A  &mt LALT R  &mt LEFT_SHIFT S  &mt LEFT_CONTROL T  &kp G          &kp M        &mt LCTRL N      &mt RIGHT_SHIFT E  &mt RALT I  &mt RGUI O
-&kp ESCAPE  &kp Z       &kp X       &kp C             &kp D               &kp V          &kp K        &kp H            &kp COMMA          &kp DOT     &kp FSLH      &key_repeat
-                                    &mo 4             &lt 3 TAB           &lt 1 SPACE    &lt 2 ENTER  &lt 4 BACKSPACE  &kp RC(BSPC)
+            &kp Q            &kp W       &kp F                  &kp P               &kp B          &kp J        &kp L            &kp U                   &kp Y       &semi_bslash
+            &LHS_HMR LGUI A  &mt LALT R  &LHS_HMR LEFT_SHIFT S  &mt LEFT_CONTROL T  &kp G          &kp M        &mt LCTRL N      &RHS_HMR RIGHT_SHIFT E  &mt RALT I  &RHS_HMR RGUI O
+&kp ESCAPE  &kp Z            &kp X       &kp C                  &kp D               &kp V          &kp K        &kp H            &kp COMMA               &kp DOT     &kp FSLH         &key_repeat
+                                         &mo 4                  &lt 3 TAB           &lt 1 SPACE    &lt 2 ENTER  &lt 4 BACKSPACE  &kp RC(BSPC)
             >;
         };
 
