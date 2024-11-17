@@ -93,10 +93,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-            &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J        &kp L            &kp U         &kp Y       &semi_bslash
-            &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G          &kp M        &mt RSHFT N      &mt RCTRL E   &mt RALT I  &mt RGUI O
-&kp ESCAPE  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K        &kp H            &kp COMMA     &kp DOT     &kp FSLH      &key_repeat
-                                    &mo 4        &lt 3 TAB    &lt 1 SPACE    &lt 2 ENTER  &lt 4 BACKSPACE  &kp RC(BSPC)
+            &kp Q       &kp W       &kp F             &kp P               &kp B          &kp J        &kp L            &kp U              &kp Y       &semi_bslash
+            &mt LGUI A  &mt LALT R  &mt LEFT_SHIFT S  &mt LEFT_CONTROL T  &kp G          &kp M        &mt LCTRL N      &mt RIGHT_SHIFT E  &mt RALT I  &mt RGUI O
+&kp ESCAPE  &kp Z       &kp X       &kp C             &kp D               &kp V          &kp K        &kp H            &kp COMMA          &kp DOT     &kp FSLH      &key_repeat
+                                    &mo 4             &lt 3 TAB           &lt 1 SPACE    &lt 2 ENTER  &lt 4 BACKSPACE  &kp RC(BSPC)
             >;
         };
 
