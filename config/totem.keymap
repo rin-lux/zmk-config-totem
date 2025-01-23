@@ -44,6 +44,11 @@
             bindings = <&kp CAPSLOCK>;
             key-positions = <29 30>;
         };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <8 7>;
+        };
     };
 
     macros {
@@ -56,13 +61,6 @@
     };
 
     behaviors {
-        semi_bslash: semi_bslash {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SEMI_BSLASH";
-            #binding-cells = <0>;
-            bindings = <&kp SEMICOLON>, <&kp BACKSLASH>;
-        };
-
         RHS_HMR: RHS_HMR {
             compatible = "zmk,behavior-hold-tap";
             label = "RHS_HMR";
@@ -114,7 +112,7 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-            &kp Q            &kp W            &kp F                  &kp P               &kp B          &kp J        &kp L            &kp U                   &kp Y            &semi_bslash
+            &kp Q            &kp W            &kp F                  &kp P               &kp B          &kp J        &kp L            &kp U                   &kp Y            &kp SEMICOLON
             &LHS_HMR LGUI A  &LHS_HMR LALT R  &LHS_HMR LEFT_SHIFT S  &mt LEFT_CONTROL T  &kp G          &kp M        &mt LCTRL N      &RHS_HMR RIGHT_SHIFT E  &LHS_HMR RALT I  &RHS_HMR RGUI O
 &kp ESCAPE  &kp Z            &kp X            &kp C                  &kp D               &kp V          &kp K        &kp H            &kp COMMA               &kp DOT          &kp FSLH         &key_repeat
                                               &mo 4                  &lt 3 TAB           &lt 1 SPACE    &lt 2 ENTER  &lt 4 BACKSPACE  &kp RC(BSPC)
